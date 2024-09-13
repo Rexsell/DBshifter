@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: example_user
+      POSTGRES_PASSWORD: example_password
+      POSTGRES_DB: example_db
+      ports: "5432:5432"
+      volumes: postgres_data:/var/lib/postgresql/data
+  mongo:
+    image: mongo:4.4
+    container_name: mongo_db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: example_user
+      MONGO_INITDB_ROOT_PASSWORD: example_password
+      ports: "27017:27017"
+      volumes: mongo_data:/data/db
+volumes:
+  postgres_data:
+  mongo_data:

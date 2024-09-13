@@ -1,0 +1,11 @@
+source_database_dsn: postgresql://postgres:123@localhost:5432/postgres
+source_collection_name: devices
+source_database_name: postgres
+destination_database_dsn: mongodb://localhost:27017/
+destination_collection_name: testdb
+destination_database_name: local
+fields_to_anonymise:
+  - name
+  - security_key
+fields_to_delete:
+  - ip_address
